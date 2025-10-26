@@ -1,0 +1,138 @@
+
+#title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  text-align: center;
+  transform: scaleY(1.1);
+}
+
+#aarohan-title {
+  font-weight: bold;
+  color: #d97706;
+  font-size: 7rem;
+  letter-spacing: 1rem;
+  position: relative;
+  text-shadow: 9px 9px 0px #5a2f04;
+}
+
+#fest-details {
+  font-weight: bold;
+  color: #d97706;
+  text-align: center;
+  line-height: 1.1;
+  font-size: 2rem;
+  text-shadow: 5px 5px 0px #5a2f04;
+}
+
+#typewriter-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 1rem;
+  text-align: center;
+  height: 1px;
+}
+
+#typewriter-text {
+  font-weight: bold;
+  color: #fef1da;
+  text-shadow: 0px 0px 3px #301a0d, 0px 0px 6px rgb(56, 31, 16);
+  font-size: 1.6rem;
+  min-width: fit-content;
+  margin-top: 7rem;
+}
+
+/* Keyframes for blinking cursor effect */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+#animate-blink {
+  animation: blink 0.8s infinite;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 1280px) {
+  #aarohan-title {
+    font-size: 6rem;
+  }
+
+  #fest-details {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 790px) {
+  #aarohan-title {
+    font-size: 5rem;
+  }
+
+  #fest-details {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 675px) {
+  #aarohan-title {
+    font-size: 4rem;
+    text-shadow: 6px 6px 0px #5a2f04;
+  }
+
+  #fest-details {
+    font-size: 1.3rem;
+    text-shadow: 4px 4px 0px #5a2f04;
+  }
+
+  #typewriter-text {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 550px) {
+  #aarohan-title {
+    font-size: 3rem;
+  }
+
+  #fest-details {
+    font-size: 1.2rem;
+    text-shadow: 3px 3px 0px #5a2f04;
+  }
+
+  #typewriter-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 460px) {
+  #aarohan-title {
+    font-size: 2.5rem;
+  }
+
+  #fest-details {
+    font-size: 1rem;
+  }
+
+  #typewriter-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 365px) {
+  #aarohan-title {
+    font-size: 2rem;
+  }
+
+  #fest-details {
+    font-size: 0.9rem;
+  }
+
+  #typewriter-text {
+    font-size: 0.9rem;
+  }
+}

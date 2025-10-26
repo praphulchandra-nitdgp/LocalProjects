@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#111418] text-white font-normal;
+    font-family: 'Manrope', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-muted {
+    @apply text-[#9cabba];
+  }
+  
+  .bg-card {
+    @apply bg-[#1b2127];
+  }
+  
+  .bg-secondary {
+    @apply bg-[#283039];
+  }
+  
+  .border-divider {
+    @apply border-[#3b4754];
+  }
+  
+  .text-accent {
+    @apply text-[#3d99f5];
+  }
+  
+  .bg-accent {
+    @apply bg-[#3d99f5];
+  }
+}

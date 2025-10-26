@@ -1,0 +1,17 @@
+<form method="POST">
+    {% csrf_token %}
+    <input name="name" placeholder="Name" required />
+    <input name="email" placeholder="Email" required />
+    <input name="room_id" placeholder="Room ID" required />
+    <input name="check_in" type="date" />
+    <input name="check_out" type="date" />
+    <button type="submit">Add Student</button>
+  </form>
+  
+  <h3>Student List</h3>
+  <ul>
+    {% for s in students %}
+      <li>{{ s }}</li>
+    {% endfor %}
+  </ul>
+  

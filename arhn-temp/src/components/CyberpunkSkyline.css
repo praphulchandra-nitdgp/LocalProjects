@@ -1,0 +1,136 @@
+
+/* ------------------------------------------- */
+/* KEYFRAMES - Seamless horizontal movement */
+/* ------------------------------------------- */
+@keyframes parallax-medium {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100vw); }
+}
+
+@keyframes parallax-fast {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100vw); }
+}
+
+/* ------------------------------------------- */
+/* MAIN CONTAINER */
+/* ------------------------------------------- */
+.skyline-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: linear-gradient(to top, #060012 10%, #0b0020 90%);
+}
+
+/* ------------------------------------------- */
+/* BASE LAYER STYLES */
+/* ------------------------------------------- */
+.skyline-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex; /* two backgrounds side by side */
+  height: 100%;
+  width: 200vw; /* 2x viewport width for seamless repeat */
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 100vw 100%;
+}
+
+/* ------------------------------------------- */
+/* INDIVIDUAL LAYERS */
+/* ------------------------------------------- */
+
+/* Layer 1: Farthest - Static */
+.layer-far {
+  background-image: url("/assets/Images/temp1.webp");
+  z-index: 1;
+  opacity: 0.9;
+  width: 100vw;
+  animation: none;
+  background-size: cover;
+}
+.layer-far::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: contain;
+  filter: blur(2.5px); /* adjust to taste (4–10px works best) */
+  transform: scale(1.05); /* slightly enlarge to hide blur edges */
+}
+
+/* Layer 2: Medium Speed - Smooth Infinite Loop */
+.layer-mid {
+  position: absolute;
+  bottom: -10vh;
+  left: 0;
+  width: 200%;
+  height: 70vh;
+  z-index: 5;
+  opacity: 1;
+  overflow: hidden; /* so the pseudo-element doesn’t spill */
+  animation: parallax-medium 25s linear infinite;
+}
+
+/* Create the blurred background inside the layer */
+.layer-mid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/Images/layer-mid.png");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: contain;
+  filter: blur(1.7px); /* adjust to taste (4–10px works best) */
+  transform: scale(1.05); /* slightly enlarge to hide blur edges */
+}
+
+/* Layer 3: Fastest - Smooth Infinite Loop */
+.layer-front {
+  background-image: url("/assets/Images/layer-front.png");
+  z-index: 10;
+  opacity: 1;
+  height: 35vh;
+  animation: parallax-fast 8s linear infinite;
+  bottom: -4.5vh;
+}
+.cyberpunk-car {
+  position: absolute;
+  left: 12vw;  /* adjust horizontally as needed */
+  width: 250px; /* good size for skyline scale */
+  background-image: url("/assets/Images/Cyberpunk-car.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 15;
+  opacity: 1;
+  pointer-events: none; /* prevents it from blocking clicks */
+}
+.layer-shadow {
+  background-image: url("/assets/Images/shadow-layer.png");
+  z-index: 18;
+  opacity: 1;
+  height: 20vh;
+  animation: parallax-fast 4s linear infinite;
+}
+
+/* ------------------------------------------- */
+/* CONTENT OVERLAY */
+/* ------------------------------------------- */
+.skyline-content {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(255, 0, 200, 0.6);
+  pointer-events: none;
+}

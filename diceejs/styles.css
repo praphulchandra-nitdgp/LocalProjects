@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #eff5f6;
+background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
+    font-family: Arial, sans-serif;
+}
+h1{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(55, 55, 136);
+}
+h2{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(73, 73, 148);
+}
+#player1,
+#player2,
+#tie{
+    font-size: 30px;
+    color: rgb(69, 69, 193);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+    display: none;
+}
+
+.container{
+    display: inline-flex;
+    gap: 40px;
+}
+.dice {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(69, 69, 193);
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(249, 245, 245);
+    border-radius: 50%;
+    align-self: center;
+    justify-self: center;
+    display: none;
+}
+
+/* Positioning the dots */
+#dot1-dice1 { grid-row: 2; grid-column: 2; }
+#dot2-dice1 { grid-row: 2; grid-column: 4; }
+#dot3-dice1 { grid-row: 3; grid-column: 3; }
+#dot4-dice1 { grid-row: 4; grid-column: 2; }
+#dot5-dice1 { grid-row: 4; grid-column: 4; }
+#dot6-dice1 { grid-row: 2; grid-column: 3; }
+#dot7-dice1 { grid-row: 4; grid-column: 3; }
+
+#dot1-dice2 { grid-row: 2; grid-column: 2; }
+#dot2-dice2 { grid-row: 2; grid-column: 4; }
+#dot3-dice2 { grid-row: 3; grid-column: 3; }
+#dot4-dice2 { grid-row: 4; grid-column: 2; }
+#dot5-dice2 { grid-row: 4; grid-column: 4; }
+#dot6-dice2 { grid-row: 2; grid-column: 3; }
+#dot7-dice2 { grid-row: 4; grid-column: 3; }
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(69, 69, 193);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(50, 50, 160);
+}
+#dot3-dice1{
+    display: block;
+}
+#dot1-dice2,
+#dot3-dice2,
+#dot5-dice2,
+#dot2-dice2,
+#dot4-dice2{
+    display: block;
+}
